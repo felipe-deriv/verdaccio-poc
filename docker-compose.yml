@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio
+    container_name: verdaccio
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - 4873:4873
+    volumes:
+      - verdaccio-storage:/verdaccio
+
+  publisher:
+    container_name: publisher
+    build:
+        context: .
+        dockerfile: ./publisher/Dockerfile
+        args: 
+          - REGISTRY_URL=${REGISTRY_URL}
+    volumes:
+      - ./packages:/packages
+    depends_on:
+      - verdaccio
+    networks:
+      - node-network
+
+  my_service:
+    container_name: my_service
+    build:
+        context: .
+        dockerfile: ./packages/my_service/Dockerfile
+        args: 
+          - REGISTRY_URL=${REGISTRY_URL}
+    depends_on:
+      - verdaccio
+    networks:
+      - node-network
+    command:
+        ['run']
+  
+networks:
+  node-network:
+    driver: bridge
+
+volumes:
+  verdaccio-storage:

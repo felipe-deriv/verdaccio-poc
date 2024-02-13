@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "types": ["node"],
+        "baseUrl": ".",
+        "declaration": true,
+        "declarationDir": "dist",
+        "noEmit": false,
+        "outDir": "dist",
+        "allowJs": true
+    },
+    "include": ["src/**/*"]
+}

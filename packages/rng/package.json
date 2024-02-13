@@ -1,0 +1,12 @@
+{
+  "name": "rng",
+  "version": "1.0.0",
+  "description": "Generates random numbers",
+  "main": "dist/index.js",
+  "author": "BE",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
+  }
+}
