@@ -22,6 +22,8 @@ Remember to bump the `package.json` versions when updating.
 make publish
 ```
 
+When asked for a username and password, you can specify whatever you want, the package will be bound to the username.
+
 ## Build the app
 
 ```
