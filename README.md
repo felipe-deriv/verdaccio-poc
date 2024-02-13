@@ -24,6 +24,8 @@ make publish
 
 When asked for a username and password, you can specify whatever you want, the package will be bound to the username.
 
+You can check the registry here: http://127.0.0.1:4873
+
 ## Build the app
 
 ```
