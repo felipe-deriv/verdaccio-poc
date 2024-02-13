@@ -4,7 +4,7 @@ npm login --registry ${REGISTRY_URL}
 
 npm install --global typescript
 
-for PACKAGE in $(ls /packages)
+for PACKAGE in $(cat /usr/share/packages.txt)
 do
     cd /packages/$PACKAGE
     

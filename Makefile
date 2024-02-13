@@ -1,3 +1,5 @@
+all: publish build install
+
 publish:
 	docker compose run -it --rm publisher
 

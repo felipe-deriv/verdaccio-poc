@@ -32,6 +32,7 @@ services:
     build:
         context: .
         dockerfile: ./packages/my_service/Dockerfile
+        network: host
         args: 
           - REGISTRY_URL=${REGISTRY_URL}
     depends_on:
